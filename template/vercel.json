@@ -1,6 +1,8 @@
 {
   "build": {
     "env": {
+      "SANITY_PROJECT_ID": "wvv7gbzb",
+      "SANITY_DATASET": "production",
       "SANITY_TOKEN": "",
       "BUILD_LANGUAGES": "en-US,it-IT",
       "BUILD_CMS": "sanity",
