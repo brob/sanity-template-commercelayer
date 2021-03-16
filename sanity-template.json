@@ -19,54 +19,23 @@
       "url": "https://commercelayer.io"
     },
     {
-      "id": "netlify",
-      "name": "Netlify",
-      "url": "https://netlify.com"
+      "id": "vercel",
+      "name": "Vercel",
+      "url": "https://vercel.com"
     }
   ],
   "deployment": {
     "provider": "vercel",
-    "sites": [
+    "studio": { "basePath": "/studio" },
+    "corsOrigins": [
       {
-        "id": "studio",
-        "type": "studio",
-        "title": "Commerce Layer Stater Studio",
-        "description": "A multi-country ecommerce starter built with Sanity Studio, Commerce Layer, Next.js, and deployed to Netlify.",
-        "dir": "/studio",
-        "previewMedia": {
-          "type": "image",
-          "src": "assets/studio.png",
-          "alt": "A preview image of the Sanity studio."
-        },
-        "buildSettings": {
-          "base": "/",
-          "dir": "/studio/dist",
-          "cmd": "npm run build-studio"
-        }
-      },
-      {
-        "id": "web",
-        "type": "web",
-        "title": "Commerce Layer Starter Web",
-        "description": "A multi-country ecommerce starter built with Sanity Studio, Commerce Layer, Next.js, and deployed to Netlify.",
-        "dir": "/web",
-        "previewMedia": {
-          "type": "image",
-          "src": "assets/frontend.png",
-          "alt": "A preview image of the web demo."
-        },
-        "buildSettings": {
-          "base": "/",
-          "dir": "/web/out",
-          "cmd": "npm run build-web"
-        },
-        "requiredCorsOrigins": [
-          {
-            "origin": "http://localhost:3000",
-            "allowCredentials": false
-          }
-        ]
+        "origin": "http://localhost:3000",
+        "allowCredentials": true
       }
-    ]
+    ],
+    "envVars": {
+      "projectId": ["NEXT_PUBLIC_SANITY_PROJECT_ID"],
+      "dataset": ["NEXT_PUBLIC_SANITY_DATASET"]
+    }
   }
 }
